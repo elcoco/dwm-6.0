@@ -1,3 +1,3 @@
 Patched dwm-6.0
 
-![Scrot](https://raw.github.com/elcoco/dwm-6.0/blob/master/scrot.png)
+![ScreenShot](https://raw.github.com/i-saumitra/Voice-controlled-MP3-Player/master/screenshot.jpg)
