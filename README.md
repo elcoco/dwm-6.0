@@ -1,3 +1,3 @@
 Patched dwm-6.0
 
-![Scrot](github.com/elcoco/dwm-6.0/master/scrot.png)
+![Scrot](https://github.com/elcoco/dwm-6.0/blob/master/scrot.png)
