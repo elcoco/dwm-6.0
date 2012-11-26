@@ -18,7 +18,8 @@ _patches=(00-${pkgname}-${pkgver}-buildflags.diff
 		  04-${pkgname}-${pkgver}-statuscolors.diff
 		  05-${pkgname}-${pkgver}-occupiedcol.diff
 		  06-${pkgname}-${pkgver}-no_title.diff)
-		  
+		  #07-${pkgname}-${pkgver}-single_window_no_border.diff
+
 source=(${_source[@]} ${_patches[@]})
 
 build() {
@@ -844,6 +845,44 @@ md5sums=('8bb00d4142259beb11e13473b81c0857'
          'd87223a0c056e59a0dd6a5fba5d0c745')
 md5sums=('8bb00d4142259beb11e13473b81c0857'
          '83e981cc3bf25a6fe51ea5ea74e18d9a'
+         '0980b328204a1f8d0664a413510c450a'
+         '951dfa6139e99e8bbcdf999ba182803b'
+         '0fd771ad51b80c3872c9080bd15f6eea'
+         '6a0f657a18b77764fdd70a819b78412f'
+         '5de666a41912731a9fa0ab40d5c497e0'
+         '5ea175f007b04b82befa36d3c139db04'
+         'd87223a0c056e59a0dd6a5fba5d0c745')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '83e981cc3bf25a6fe51ea5ea74e18d9a'
+         '0980b328204a1f8d0664a413510c450a'
+         '951dfa6139e99e8bbcdf999ba182803b'
+         '0fd771ad51b80c3872c9080bd15f6eea'
+         '6a0f657a18b77764fdd70a819b78412f'
+         '5de666a41912731a9fa0ab40d5c497e0'
+         '5ea175f007b04b82befa36d3c139db04'
+         'd87223a0c056e59a0dd6a5fba5d0c745'
+         '94044e60df28c54fd8ec3e01a2721c31')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '83e981cc3bf25a6fe51ea5ea74e18d9a'
+         '0980b328204a1f8d0664a413510c450a'
+         '94044e60df28c54fd8ec3e01a2721c31'
+         '951dfa6139e99e8bbcdf999ba182803b'
+         '0fd771ad51b80c3872c9080bd15f6eea'
+         '6a0f657a18b77764fdd70a819b78412f'
+         '5de666a41912731a9fa0ab40d5c497e0'
+         '5ea175f007b04b82befa36d3c139db04'
+         'd87223a0c056e59a0dd6a5fba5d0c745')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '83e981cc3bf25a6fe51ea5ea74e18d9a'
+         '0980b328204a1f8d0664a413510c450a'
+         '951dfa6139e99e8bbcdf999ba182803b'
+         '0fd771ad51b80c3872c9080bd15f6eea'
+         '6a0f657a18b77764fdd70a819b78412f'
+         '5de666a41912731a9fa0ab40d5c497e0'
+         '5ea175f007b04b82befa36d3c139db04'
+         'd87223a0c056e59a0dd6a5fba5d0c745')
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '65a2966b0667325192eda132a9de45d3'
          '0980b328204a1f8d0664a413510c450a'
          '951dfa6139e99e8bbcdf999ba182803b'
          '0fd771ad51b80c3872c9080bd15f6eea'
