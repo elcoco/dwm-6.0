@@ -48,6 +48,7 @@ static const Tag tags[] = {
     { "HOME",	&layouts[0], -1,    -1 },
     { "WWW",	&layouts[0], -1,	-1 },
     { "TERM",	&layouts[0], -1,    -1 },
+    { "TERM",	&layouts[0], -1,    -1 },
     { "EMAIL",	&layouts[0], -1,    -1 },
     { "MEDIA",	&layouts[0], -1,    -1 },
 };

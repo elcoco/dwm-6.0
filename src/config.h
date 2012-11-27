@@ -1,1 +1,1 @@
-/home/frietzicht/bin/dwm-git/config.h
+/home/eco/bin/dwm-6.0/config.h
