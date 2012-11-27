@@ -45,12 +45,12 @@ static const Layout layouts[] = {
 /* tagging */
 static const Tag tags[] = {
     /* name    layout       mfact  nmaster*/
-    { "HOME",	&layouts[0], -1,    -1 },
-    { "WWW",	&layouts[0], -1,	-1 },
-    { "TERM",	&layouts[0], -1,    -1 },
-    { "TERM",	&layouts[0], -1,    -1 },
-    { "EMAIL",	&layouts[0], -1,    -1 },
-    { "MEDIA",	&layouts[0], -1,    -1 },
+    { "H",	&layouts[0], -1,    -1 },
+    { "W",	&layouts[0], -1,	-1 },
+    { "T",	&layouts[0], -1,    -1 },
+    { "T",	&layouts[0], -1,    -1 },
+    { "E",	&layouts[0], -1,    -1 },
+    { "M",	&layouts[0], -1,    -1 },
 };
 
 // import nextprevtag
