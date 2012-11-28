@@ -78,6 +78,7 @@ static const char *quitcmd[]  		= { "dmenu_shutdown" ,NULL };
 static const char *helpcmd[]  		= { "dmenu_doc", "bin/mon", NULL };
 static const char *scriptscmd[] 	= { "dmenu_doc", "bin/scripts", NULL };
 static const char *pythoncmd[] 	    = { "dmenu_doc", "bin/python", NULL };
+static const char *ccmd[] 	        = { "dmenu_doc", "bin/c", NULL };
 static const char *ncmpcppcmd[]  	= { "urxvt", "-e",	"ncmpcpp", NULL };
 static const char *alsamixercmd[]  	= { "urxvt", "-e",	"alsamixer", NULL };
 static const char *wicdcmd[]		= { "urxvt", "-e",	"wicd-curses", NULL };
@@ -136,6 +137,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_h, spawn,               {.v = helpcmd } },
 	{ MODKEY|ShiftMask,				XK_s, spawn,               {.v = scriptscmd } },
 	{ MODKEY|ShiftMask,				XK_p, spawn,               {.v = pythoncmd } },
+	{ MODKEY|ShiftMask,				XK_c, spawn,               {.v = ccmd } },
 
 	{ MODKEY|ShiftMask,		XK_a, spawn,               {.v = alsamixercmd } },
 	{ MODKEY,		        XK_backslash, spawn,       {.v = playpausecmd } },
