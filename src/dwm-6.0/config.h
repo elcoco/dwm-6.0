@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "Droid Sans Mono:size=9:Bold:antialias=true";
+static const char font[]            = "Droid Sans Mono:size=12:Bold:antialias=true";
 #define NUMCOLORS 5
 static const char colors[NUMCOLORS][ColLast][8] = {
   // border   foreground background
@@ -81,6 +81,8 @@ static const char *scriptscmd[] 	= { "dmenu_doc", "bin/scripts", NULL };
 static const char *helpcmd[]  		= { "dmenu_doc", "doc/docfiles/mon", NULL };
 static const char *pythoncmd[] 	    = { "dmenu_doc", "doc/docfiles/python", NULL };
 static const char *ccmd[] 	        = { "dmenu_doc", "doc/docfiles/c", NULL };
+static const char *displaycmd[]     = { "em", NULL };
+static const char *dcalcmd[]        = { "dcal", NULL };
 static const char *ncmpcppcmd[]  	= { "urxvt", "-e",	"ncmpcpp", NULL };
 static const char *alsamixercmd[]  	= { "urxvt", "-e",	"alsamixer", NULL };
 static const char *wicdcmd[]		= { "urxvt", "-e",	"wicd-curses", NULL };
@@ -142,6 +144,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_x, spawn,               {.v = passcmd } },
 	{ MODKEY|ShiftMask,				XK_c, spawn,               {.v = ccmd } },
 	{ MODKEY|ShiftMask,				XK_l, spawn,               {.v = lockcmd } },
+	{ MODKEY|ShiftMask,				XK_d, spawn,               {.v = displaycmd } },
 
 	{ MODKEY|ShiftMask,		XK_a, spawn,               {.v = alsamixercmd } },
 	{ MODKEY,		        XK_backslash, spawn,       {.v = playpausecmd } },
