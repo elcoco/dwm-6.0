@@ -1,0 +1,19 @@
+diff -paur dwm.old/dwm.c dwm.new/dwm.c
+--- dwm.old/dwm.c	2012-12-14 21:13:02.818037177 +0100
++++ b/dwm-6.0/dwm.c	2012-12-14 21:13:07.648082669 +0100
+@@ -1360,7 +1360,13 @@ resizeclient(Client *c, int x, int y, in
+ 	c->oldy = c->y; c->y = wc.y = y;
+ 	c->oldw = c->w; c->w = wc.width = w;
+ 	c->oldh = c->h; c->h = wc.height = h;
+-	wc.border_width = c->bw;
++	if(selmon->wx == c->x && selmon->wy == c->y && selmon->ww - 2 * c->bw == c->w && selmon->wh - 2 * c->bw == c->h && !c->isfloating && !c->isfullscreen) {
++		wc.border_width = 0;
++		c->w = wc.width += c->bw * 2;
++		c->h = wc.height += c->bw * 2;
++	}
++	else
++		wc.border_width = c->bw;
+ 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
+ 	configure(c);
+ 	XSync(dpy, False);
+

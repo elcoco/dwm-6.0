@@ -1,30 +1,29 @@
-/* See LICENSE file for copyright and license details. */
+static const char font[] = "-*-terminus-medium-*-*-*-14-*-*-*-*-*-*-*";
 
-/* appearance */
-static const char font[]            = "Droid Sans Mono:size=12:Bold:antialias=true";
-#define NUMCOLORS 5
-static const char colors[NUMCOLORS][ColLast][8] = {
-  // border   foreground background
-  { "#636363", "#848484", "#222222" },  // normal
-  { "#ffffff", "#AD6500", "#222222" },  // selected
-  { "#2E2E2E", "#FF8278", "#222222" },  // urgent/warning  (black on yellow)
-  { "#2E2E2E", "#556B2F", "#222222" },  // occupied
-  { "#2E2E2E", "#ffffff", "#222222" },  // error (white on red)
-};
+static const char normbordercolor[] = "#636363";
+static const char normbgcolor[]     = "#222222";
+static const char normfgcolor[]     = "#848484";
+static const char selbordercolor[]  = "#ffffff";
+static const char selbgcolor[]      = "#222222";
+static const char selfgcolor[]      = "#ad6500";
+static const char occbordercolor[]  = "#636363";
+static const char occbgcolor[]      = "#222222";
+static const char occfgcolor[]      = "#556B2F";
+
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 // configure systray diff
-static const unsigned int systrayspacing	= 2;		/* systray spacing */
-static const Bool showsystray				= True;     /* False means no systray */
+//static const unsigned int systrayspacing	= 2;		/* systray spacing */
+//static const Bool showsystray				= True;     /* False means no systray */
 
 // class, instance and title can be found out by issuing xprop(1)
 //  WM_CLASS(STRING) = instance, class, WM_NAME(STRING) = title
 static const Rule rules[] = {
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Firefox",	       NULL,       NULL,           2,            False,        -1 },
+	/* class        instance    title   tags mask   isfloating  monitor */
+	{ "Firefox",    NULL,       NULL,   2,          False,      -1 },
 };
 
 #include "c/gaplessgrid.c"
@@ -35,8 +34,8 @@ static const int nmaster      = 1;    	/* number of clients in master area */
 static const Bool resizehints = False; 	/* True means respect size hints in tiled resizals */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    	/* first entry is default */
-	{ "><>",      NULL },    	/* no layout function means floating behavior */
+	{ "[]=",      tile },    	        /* first entry is default */
+	{ "><>",      NULL },    	        /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "###",      gaplessgrid },
 	{ "===",	  bstack },
@@ -72,27 +71,26 @@ static const Tag tags[] = {
 static const char *dmenucmd[]		= { "dmenu_run", "-fn", font, NULL };
 static const char *termcmd[]  		= { "urxvt", NULL };
 static const char *browsercmd[]  	= { "firefox",	NULL };
-static const char *filemanagercmd[] = { "spacefm", NULL };
 static const char *mailcmd[]  		= { "urxvt", "-e", "mutt" ,NULL };
-static const char *quitcmd[]  		= { "dmenu_shutdown" ,NULL };
+static const char *quitcmd[]  		= { "dmenu-shutdown" ,NULL };
 static const char *lockcmd[]  		= { "slock" ,NULL };
 static const char *passcmd[] 	    = { "pass", "--dmenu", NULL };
-static const char *scriptscmd[] 	= { "dmenu_doc", "bin/scripts", NULL };
-static const char *helpcmd[]  		= { "dmenu_doc", "doc/docfiles/mon", NULL };
-static const char *pythoncmd[] 	    = { "dmenu_doc", "doc/docfiles/python", NULL };
-static const char *javacmd[] 	    = { "dmenu_doc", "doc/docfiles/java", NULL };
-static const char *ccmd[] 	        = { "dmenu_doc", "doc/docfiles/c", NULL };
-static const char *displaycmd[]     = { "em", NULL };
-static const char *ncmpcppcmd[]  	= { "urxvt", "-e",	"ncmpcpp", NULL };
+static const char *scriptscmd[] 	= { "dmenu-doc", "bin/scripts", NULL };
+static const char *helpcmd[]  		= { "dmenu-doc", "doc/docfiles/mon", NULL };
+static const char *pythoncmd[] 	    = { "dmenu-doc", "doc/docfiles/python", NULL };
+static const char *javacmd[] 	    = { "dmenu-doc", "doc/docfiles/java", NULL };
+static const char *ccmd[] 	        = { "dmenu-doc", "doc/docfiles/c", NULL };
+static const char *notescmd[] 	    = { "dmenu-doc", "doc/docfiles/notes", NULL };
+static const char *filemanagercmd[] = { "urxvt", "-e",	"ranger", NULL };
+static const char *mpdcmd[]  	    = { "urxvt", "-e",	"ncmpcpp", NULL };
 static const char *alsamixercmd[]  	= { "urxvt", "-e",	"alsamixer", NULL };
 static const char *wicdcmd[]		= { "urxvt", "-e",	"wicd-curses", NULL };
+static const char *displaycmd[]  	= { "xrandr-probe", NULL };
 static const char *playpausecmd[]  	= { "mpc", "toggle", NULL };
 static const char *prevcmd[]  		= { "mpc", "prev", NULL };
 static const char *nextcmd[] 	 	= { "mpc", "next", NULL };
 static const char *volupcmd[]		= { "amixer", "set", "Master", "5%+", NULL };
 static const char *voldowncmd[]		= { "amixer", "set", "Master", "5%-", NULL };
-//static const char *volupcmd[] 		= { "dvol", "-i", "5", NULL };
-//static const char *voldowncmd[] 	= { "dvol", "-d", "5", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -135,11 +133,12 @@ static Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_b, spawn,               {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_f, spawn,               {.v = filemanagercmd } },
-	{ MODKEY|ShiftMask,             XK_m, spawn,               {.v = mailcmd } },
-	{ MODKEY|ShiftMask,             XK_n, spawn,               {.v = ncmpcppcmd } },
+	{ MODKEY|ShiftMask,             XK_e, spawn,               {.v = mailcmd } },
+	{ MODKEY|ShiftMask,             XK_m, spawn,               {.v = mpdcmd } },
 	{ MODKEY|ShiftMask,				XK_w, spawn,               {.v = wicdcmd } },
 	{ MODKEY|ShiftMask,				XK_h, spawn,               {.v = helpcmd } },
 	{ MODKEY|ShiftMask,				XK_s, spawn,               {.v = scriptscmd } },
+	{ MODKEY|ShiftMask,				XK_n, spawn,               {.v = notescmd } },
 	{ MODKEY|ShiftMask,				XK_p, spawn,               {.v = pythoncmd } },
 	{ MODKEY|ShiftMask,				XK_j, spawn,               {.v = javacmd } },
 	{ MODKEY|ShiftMask,				XK_x, spawn,               {.v = passcmd } },

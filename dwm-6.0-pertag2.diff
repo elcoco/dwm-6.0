@@ -100,12 +100,12 @@
  	for(i = 0; i < LENGTH(tags); i++) {
 -		dc.w = TEXTW(tags[i]);
 +        dc.w = TEXTW(tags[i].name);
- 		col = m->tagset[m->seltags] & 1 << i ? dc.sel : dc.norm;
+		col = (m->tagset[m->seltags] & 1 << i) ? dc.sel : (occ & 1 << i ? dc.occ : dc.norm);
 -		drawtext(tags[i], col, urg & 1 << i);
 +		drawtext(tags[i].name, col, urg & 1 << i);
- 		drawsquare(m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
- 		           occ & 1 << i, urg & 1 << i, col);
- 		dc.x += dc.w;
+		dc.x += dc.w;
+	}
+	dc.w = blw = TEXTW(m->ltsymbol);
 @@ -1037,7 +1065,7 @@
  
  void
